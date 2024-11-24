@@ -1,12 +1,14 @@
-Sample to show hot methods in Java Flight Recording
-===================================================
+Sample to show hot methods in a Java Flight Recording
+=====================================================
 
 This program checks whether a given random number is primitive or not.
 
 Run the program and also make a profiling recording.
 
 ### How to run
-`java -Xms64m -Xmx64m -XX:+UnlockDiagnosticVMOptions -XX:+DebugNonSafepoints -XX:+UnlockCommercialFeatures -XX:+FlightRecorder -XX:StartFlightRecording=settings=profile,duration=60s,name=Hotmethods,filename=hotmethods.jfr -XX:FlightRecorderOptions=loglevel=info -jar target/hotmethods.jar`
+```bash
+java -Xms64m -Xmx64m -XX:+UnlockDiagnosticVMOptions -XX:+DebugNonSafepoints -XX:+FlightRecorder -XX:StartFlightRecording=settings=profile,duration=60s,name=Hotmethods,filename=hotmethods.jfr -Xlog:jfr=info -jar target/hotmethods.jar
+```
 
 ### Analyzing Java Flight Recording
 

@@ -1,12 +1,14 @@
-Sample to show latencies in Java Flight Recording
-=================================================
+Sample to show latencies in a Java Flight Recording
+===================================================
 
 This program has two threads: Even and Odd to print Even and Odd numbers.
 
 Run the program and also make a profiling recording.
 
 ### How to run
-`java -Xms64m -Xmx64m -XX:+UnlockDiagnosticVMOptions -XX:+DebugNonSafepoints -XX:+UnlockCommercialFeatures -XX:+FlightRecorder -XX:StartFlightRecording=settings=profile,duration=30s,name=Latencies,filename=latencies.jfr -XX:FlightRecorderOptions=loglevel=info -jar target/latencies.jar`
+```bash
+java -Xms64m -Xmx64m -XX:+UnlockDiagnosticVMOptions -XX:+DebugNonSafepoints -XX:+FlightRecorder -XX:StartFlightRecording=settings=profile,duration=30s,name=Latencies,filename=latencies.jfr -Xlog:jfr=info -jar target/latencies.jar
+```
 
 ### Analyzing Java Flight Recording
 
